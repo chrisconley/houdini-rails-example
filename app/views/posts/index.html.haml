@@ -1,0 +1,14 @@
+%h1 Posts
+
+%h2= link_to "New Post", new_post_path
+
+%table
+  %thead
+    %th Title
+    %th Image
+    %th Status
+  %tbody
+    - @posts.each do |post|
+      %td= post.title
+      %td= image_tag post.image_url
+      %td= post.status

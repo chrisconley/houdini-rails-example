@@ -1,0 +1,14 @@
+%h1 New Post
+
+- form_for @post do |f|
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+
+  %p
+    = f.label :image_url
+    %br
+    = f.text_field :image_url
+
+  %p= submit_tag

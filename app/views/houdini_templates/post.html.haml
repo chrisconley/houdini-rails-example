@@ -1,0 +1,11 @@
+%h2 Review the image for offensiveness
+
+%h3 Instructions
+%p Please review the image below.
+
+%img{:src => post.image_url}
+
+%br
+%input{:type => 'radio', :name => 'flagged', :value => 'yes', :class => 'required'} Yes, this picture is offensive
+%br
+%input{:type => 'radio', :name => 'flagged', :value => 'no', :class => 'required'} No, this picture is okay

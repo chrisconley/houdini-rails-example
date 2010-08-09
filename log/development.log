@@ -1,0 +1,407 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (76.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (110.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100809203251)
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "image_url" text, "status" varchar(255), "houdini_request_sent_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100809203251')[0m
+  [4;35;1mSQL (3.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+/!\ FAILSAFE /!\  Mon Aug 09 16:51:08 -0400 2010
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:156:in `require'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:156:in `require'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activesupport-2.3.8/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activesupport-2.3.8/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activesupport-2.3.8/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/haml-3.0.16/rails/../lib/sass/plugin/rack.rb:41:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/commands/server.rb:111
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Mon Aug 09 16:56:07 -0400 2010
+  Status: 500 Internal Server Error
+  uninitialized constant SQLite3::Driver::Native::Driver::API
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:105:in `const_missing'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/sqlite3-ruby-1.2.5/lib/sqlite3/driver/native/driver.rb:76:in `open'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/sqlite3-ruby-1.2.5/lib/sqlite3/database.rb:76:in `initialize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/haml-3.0.16/rails/../lib/sass/plugin/rack.rb:41:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/commands/server.rb:111
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Mon Aug 09 17:09:15 -0400 2010
+  Status: 500 Internal Server Error
+  uninitialized constant SQLite3::Driver::Native::Driver::API
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:105:in `const_missing'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/sqlite3-ruby-1.2.5/lib/sqlite3/driver/native/driver.rb:76:in `open'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/sqlite3-ruby-1.2.5/lib/sqlite3/database.rb:76:in `initialize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/haml-3.0.16/rails/../lib/sass/plugin/rack.rb:41:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/commands/server.rb:111
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Mon Aug 09 17:19:22 -0400 2010
+  Status: 500 Internal Server Error
+  uninitialized constant SQLite3::Driver::Native::Driver::API
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:105:in `const_missing'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/sqlite3-ruby-1.2.5/lib/sqlite3/driver/native/driver.rb:76:in `open'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/sqlite3-ruby-1.2.5/lib/sqlite3/database.rb:76:in `initialize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/haml-3.0.16/rails/../lib/sass/plugin/rack.rb:41:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/commands/server.rb:111
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Mon Aug 09 17:43:50 -0400 2010
+  Status: 500 Internal Server Error
+  uninitialized constant SQLite3::Driver::Native::Driver::API
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:105:in `const_missing'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/sqlite3-ruby-1.2.5/lib/sqlite3/driver/native/driver.rb:76:in `open'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/sqlite3-ruby-1.2.5/lib/sqlite3/database.rb:76:in `initialize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/haml-3.0.16/rails/../lib/sass/plugin/rack.rb:41:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/rails-2.3.8/lib/commands/server.rb:111
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+Could not decide on a backend, defaulting to active_record
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-08-09 17:47:34) [GET]
+Rendering posts/index
+Completed in 603ms (View: 594 | 200 OK [http://localhost/]
+Could not decide on a backend, defaulting to active_record
+Could not decide on a backend, defaulting to active_record
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-08-09 17:52:07) [GET]
+Rendering posts/index
+Completed in 16ms (View: 7 | 200 OK [http://localhost/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-08-09 17:52:09) [GET]
+Rendering posts/new
+
+ActionView::TemplateError (undefined method `get' for Text:Module) on line #12 of app/views/posts/new.html.haml:
+9:   %p
+10:     = f.label :image_url
+11:     %br
+12:     = f.text_field :image_url
+13: 
+14:   %p= submit_tag
+
+    mongoid (1.9.1) lib/mongoid/field.rb:50:in `get'
+    mongoid (1.9.1) lib/mongoid/attributes.rb:64:in `read_attribute'
+    mongoid (1.9.1) lib/mongoid/fields.rb:55:in `image_url'
+    app/views/posts/new.html.haml:12:in `_run_haml_app47views47posts47new46html46haml'
+    haml (3.0.16) rails/./lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.16) rails/./lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.16) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.16) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.16) rails/./lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/posts/new.html.haml:3:in `_run_haml_app47views47posts47new46html46haml'
+    haml (3.0.16) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.16) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    haml (3.0.16) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (123.3ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-08-09 17:52:56) [GET]
+Rendering posts/new
+Completed in 14ms (View: 5 | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-08-09 17:53:38) [POST]
+  Parameters: {"commit"=>"Save changes", "post"=>{"image_url"=>"http://chrisconley-misc.s3.amazonaws.com/edinborough.jpg", "title"=>"Blahblah"}, "authenticity_token"=>"tNSEIqvJJfKcScwIDit0P1nE9rj8TimV7W/41CwhhDY="}
+
+ActiveRecord::ConnectionNotEstablished (ActiveRecord::ConnectionNotEstablished):
+  /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/delayed_job-2.0.3/lib/delayed/backend/base.rb:21:in `enqueue'
+  /Users/chris/.rvm/gems/ree-1.8.7-head@houdini-example/gems/delayed_job-2.0.3/lib/delayed/message_sending.rb:4:in `send_later'
+  app/models/post.rb:24:in `moderate_image'
+  mongoid (1.9.1) lib/mongoid/persistence/insert.rb:33:in `persist'
+  mongoid (1.9.1) lib/mongoid/persistence.rb:45:in `insert'
+  mongoid (1.9.1) lib/mongoid/persistence.rb:127:in `save'
+  app/controllers/posts_controller.rb:12:in `create'
+  haml (3.0.16) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  haml (3.0.16) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/chris/.rvm/rubies/ree-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (130.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
