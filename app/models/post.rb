@@ -29,6 +29,6 @@ class Post
   end
 
   def process_image_moderation_answer(answer)
-    answer[:flagged] == 'no' ? approve! : flag!
+    answer[:flagged] == 'no' ? update_attribute(:status, 'approved') : update_attribute(:status, 'flagged')
   end
 end
